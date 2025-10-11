@@ -1,4 +1,4 @@
-declare module "pdfjs-dist/build/pdf" {
+declare module "pdfjs-dist" {
   interface TextItem {
     str: string;
   }
@@ -22,9 +22,4 @@ declare module "pdfjs-dist/build/pdf" {
 
   export const GlobalWorkerOptions: GlobalWorkerOptionsType;
   export function getDocument(params: { data: ArrayBuffer }): { promise: Promise<PdfDocument> };
-}
-
-declare module "pdfjs-dist/build/pdf.worker.min.js?url" {
-  const workerSrc: string;
-  export default workerSrc;
 }

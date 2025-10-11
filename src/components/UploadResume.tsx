@@ -89,9 +89,9 @@ async function extractTextFromFile(file: File): Promise<string> {
 
   if (file.type === "application/pdf") {
     const pdfBuffer = await file.arrayBuffer();
-    const pdfjs = await import("pdfjs-dist/build/pdf");
-    const workerSrc = await import("pdfjs-dist/build/pdf.worker.min.js?url");
-    pdfjs.GlobalWorkerOptions.workerSrc = workerSrc.default;
+    const pdfjs = await import("pdfjs-dist");
+    const workerSrc = new URL("pdfjs-dist/build/pdf.worker.mjs", import.meta.url);
+    pdfjs.GlobalWorkerOptions.workerSrc = workerSrc.toString();
 
     const pdf = await pdfjs.getDocument({ data: pdfBuffer }).promise;
     const pages: string[] = [];

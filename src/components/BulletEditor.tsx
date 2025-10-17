@@ -32,7 +32,7 @@ export function BulletEditor({ bullets, onUpdate, highlighted }: BulletEditorPro
                 next[index] = event.target.value;
                 onUpdate(next);
               }}
-              className={`w-full rounded-md border p-2 text-sm focus:border-sky-500 focus:outline-none ${
+              className={`w-full rounded-md border p-2 text-sm text-gray-900 focus:border-sky-500 focus:outline-none ${
                 isHighlighted ? "border-sky-400 bg-sky-50" : "border-slate-200"
               }`}
             />

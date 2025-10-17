@@ -22,7 +22,7 @@ export function JobDescriptionInput({ value, onChange, onKeywordsExtracted }: Jo
           onChange(text);
           onKeywordsExtracted(extractKeywords(text));
         }}
-        className="w-full rounded-md border border-slate-200 bg-white p-3 text-sm shadow-sm focus:border-sky-500 focus:outline-none"
+        className="w-full rounded-md border border-slate-200 bg-white p-3 text-sm text-gray-900 shadow-sm focus:border-sky-500 focus:outline-none"
         rows={10}
         placeholder="Paste the job description here..."
       />
